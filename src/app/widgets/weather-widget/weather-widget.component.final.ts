@@ -18,18 +18,16 @@ import { WidgetState } from '../widget-state.service';
     <div class="widget-content">
       <ng-container
         [ngTemplateOutlet]="contentTemplate || defaultWidgetContent"
-        [ngTemplateOutletContext]="{ $implicit: state }"
-      ></ng-container>
+        [ngTemplateOutletContext]="{ $implicit: state }"></ng-container>
       <ng-template #defaultWidgetContent>
         <div class="sky-condition">{{ state.data.skyCondition === 'sunny' ? '☀️' : '☁️' }}</div>
-        <div class="temperature">{{ state.data.temperature }}°C</div>
+        <div class="temperature">{{state.data.temperature}}°C</div>
       </ng-template>
     </div>
     <div class="widget-actions">
       <ng-container
         [ngTemplateOutlet]="actionTemplate || defaultWidgetAction"
-        [ngTemplateOutletInjector]="injector"
-      ></ng-container>
+        [ngTemplateOutletInjector]="injector"></ng-container>
       <ng-template #defaultWidgetAction>
         <button (click)="actions.reload()">Reload</button>
         <button (click)="actions.copyData()">Copy Info</button>
@@ -37,7 +35,7 @@ import { WidgetState } from '../widget-state.service';
     </div>
   `,
   styleUrls: ['./weather-widget.component.css'],
-  providers: [WidgetActions, WidgetState],
+  providers: [WidgetActions, WidgetState]
 })
 export class WeatherWidgetComponent {
   @Input()

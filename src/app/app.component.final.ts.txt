@@ -17,29 +17,28 @@ import { WeatherWidgetComponent } from './widgets/weather-widget/weather-widget.
     </ng-template>
     <ng-template #altWidgetContent let-state>
       <div>
-        <span>🌡 {{ state.data.temperature }}°C</span> -
-        <span>{{ state.data.skyCondition === 'sunny' ? '☀️' : '☁️' }}</span> -
-        <span>🌬️ {{ state.data.windspeed }}m/s</span>
+        <span>🌡 {{state.data.temperature}}°C</span> - 
+        <span>{{state.data.skyCondition === 'sunny' ? '☀️' : '☁️'}}</span> - 
+        <span>🌬️ {{state.data.windspeed}}m/s</span>
       </div>
     </ng-template>
     <ng-template #altAction>
       <app-weather-custom-action></app-weather-custom-action>
     </ng-template>
   `,
-  styles: [
-    `
-      :host {
-        height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .alt-header {
-        font-size: 24px;
-        font-weight: 300;
-        margin-bottom: -6px;
-      }
-    `,
-  ],
+  styles: [`
+    :host {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .alt-header {
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: -6px;
+    }
+  `]
 })
-export class AppComponent {}
+export class AppComponent {
+}

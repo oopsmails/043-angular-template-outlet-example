@@ -1,0 +1,10 @@
+# Ignore artifacts: 
+build 
+coverage
+
+# Ignore all files with extensions:
+*.example
+
+# Ignore file
+src/app/data/usStateWithCities.data.ts
+
